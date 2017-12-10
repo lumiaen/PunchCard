@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher.png.flat",
+        "source": "/home/kasparof/StudioProjects/Punchcard/app/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/res/merged/debug/menu_panchcard.xml.flat",
+        "source": "/home/kasparof/StudioProjects/Punchcard/app/src/main/res/menu/panchcard.xml"
+    },
+    {
+        "merged": "/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_launcher.png.flat",
+        "source": "/home/kasparof/StudioProjects/Punchcard/app/src/main/res/drawable-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/res/merged/debug/layout_activity_panchcard.xml.flat",
+        "source": "/home/kasparof/StudioProjects/Punchcard/app/src/main/res/layout/activity_panchcard.xml"
+    },
+    {
+        "merged": "/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_launcher.png.flat",
+        "source": "/home/kasparof/StudioProjects/Punchcard/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+    }
+]

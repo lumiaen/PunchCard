@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86"
+    api-level="25"
+    build-mode="HOT_WARM"
+    density="xxhdpi"
+    format="10"
+    plugin-version="3.0.1"
+    timestamp="1512930319136"
+    token="-3333120483229722285"
+    verifier="COMPATIBLE" >
+
+    <task
+        name="javac"
+        duration="84" />
+    <task
+        name="instant-run-dex"
+        duration="692" />
+    <task
+        name="instant-run-transform"
+        duration="15" />
+    <task
+        name="verifier"
+        duration="2" />
+
+    <artifact
+        location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/reload-dex/debug/classes.dex"
+        type="RELOAD_DEX" />
+
+    <build
+        build-mode="FULL"
+        timestamp="1512928910341"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/outputs/apk/debug/app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1512929206719"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/builds/debug/1512929206719/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1512929453627"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/builds/debug/1512929453627/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1512929509930"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/builds/debug/1512929509930/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1512929561352"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/builds/debug/1512929561352/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1512929739293"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/builds/debug/1512929739293/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1512929795302"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/builds/debug/1512929795302/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1512929978173"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/builds/debug/1512929978173/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1512930229675"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/builds/debug/1512930229675/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1512930319136"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/kasparof/StudioProjects/Punchcard/app/build/intermediates/reload-dex/debug/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+
+</instant-run>

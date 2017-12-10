@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Punchcard</string>
+    <string name="action_settings">Settings</string>
+    <string name="GetDate">Insert Date &amp; Entry Time</string>
+    <string name="deleteday">Delete Current Day</string>
+    <string name="exit">Exit</string>
+    <string name="updateexit">Update Exit Time</string>
+    <string name="calculate_time">Calculate time</string>
+    <string name="showdate">Show Date</string>
+    <string name="dFormat">yyyy/M/d</string>
+
+</resources>
