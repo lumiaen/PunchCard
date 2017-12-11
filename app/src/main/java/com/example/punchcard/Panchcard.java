@@ -30,12 +30,13 @@ public class Panchcard extends Activity {
 	SQLiteDatabase mydb;
     public static String DBNAME = "INOUTLOG.db";    // THIS IS THE SQLITE DATABASE FILE NAME.
     public static String TABLE = "MY_TABLE";       // THIS IS THE TABLE NAME
-	
+	EditText dateEditText;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_panchcard);
+		dateEditText = (EditText) findViewById(R.id.editText1);
     }
 
 
@@ -279,20 +280,15 @@ public void showdate (View v){
 	String curDate = sdf.format(new Date());
 	String curTime = sdftime.format(new Date());
 	setContentView(R.layout.activity_panchcard);
-    TextView tv = (TextView)findViewById(R.id.textView1);
-    TextView tv2 = (EditText)findViewById(R.id.editText1);
+	TextView tv = (TextView)findViewById(R.id.textView1);
     SimpleDateFormat datefromtextfield = new SimpleDateFormat("yyyy/M/d");
-	String datetoshow;
-	int tv2length = tv2.getText().length();
-	String tv2String = tv2.getText().toString();
-	if (tv2.getText().length()==0)
+	String datetoshow = dateEditText.getText().toString();
+	dateEditText.setText(null);
+	if (datetoshow.length()==0)
     	{
     	datetoshow=curDate;
     	}
-    	else
-		datetoshow= tv2.getText().toString();
-
-    if(allrows.moveToFirst())
+      if(allrows.moveToFirst())
     {
     	do 
     	{
