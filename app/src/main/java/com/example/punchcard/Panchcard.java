@@ -231,13 +231,26 @@ public void calculate_time (View v) throws ParseException {
         }
         while (allrows.moveToNext());
     }
-
+    long flexTime = leptaover - leptadelay;
     timestamp = "Overtime : " + String.format("%02d:%02d", TimeUnit.MINUTES.toHours(leptaover),
             TimeUnit.MINUTES.toMinutes(leptaover)-
                     TimeUnit.HOURS.toMinutes(TimeUnit.MINUTES.toHours(leptaover))) +
              " Delay : " + String.format("%02d:%02d", TimeUnit.MINUTES.toHours(leptadelay),
                     TimeUnit.MINUTES.toMinutes(leptadelay) -
                             TimeUnit.HOURS.toMinutes(TimeUnit.MINUTES.toHours(leptadelay)));
+        if (flexTime>0)
+        {
+            timestamp +="\nFlexTime : " + String.format("%02d:%02d", TimeUnit.MINUTES.toHours(flexTime),
+                    TimeUnit.MINUTES.toMinutes(flexTime)-
+                            TimeUnit.HOURS.toMinutes(TimeUnit.MINUTES.toHours(flexTime)));
+        }
+        else
+        {
+            flexTime*=-1;
+            timestamp +="\nFlexTime : -" + String.format("%02d:%02d", TimeUnit.MINUTES.toHours(flexTime),
+                    TimeUnit.MINUTES.toMinutes(flexTime)-
+                            TimeUnit.HOURS.toMinutes(TimeUnit.MINUTES.toHours(flexTime)));
+        }
     	allrows.close();
     	tv.setText(timestamp);
     mydb.close();
