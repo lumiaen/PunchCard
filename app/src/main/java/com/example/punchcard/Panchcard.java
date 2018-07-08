@@ -185,77 +185,52 @@ finish();
 System.exit(0);
 }
 public void calculate_time (View v) throws ParseException {
-    
-	mydb = openOrCreateDatabase(DBNAME, Context.MODE_PRIVATE,null);
-    mydb.execSQL("CREATE TABLE IF  NOT EXISTS "+ TABLE +" (ID INTEGER PRIMARY KEY, CUR_DATE TEXT, TIME_1 TEXT, TIME_2 TEXT);");
-    Cursor allrows  = mydb.rawQuery("SELECT * FROM "+  TABLE, null);
-    String timestamp="";
+    mydb = openOrCreateDatabase(DBNAME, Context.MODE_PRIVATE, null);
+    mydb.execSQL("CREATE TABLE IF  NOT EXISTS " + TABLE + " (ID INTEGER PRIMARY KEY, CUR_DATE TEXT, TIME_1 TEXT, TIME_2 TEXT);");
+    Cursor allrows = mydb.rawQuery("SELECT * FROM " + TABLE, null);
+    String timestamp = "";
     SimpleDateFormat MonthCur = new SimpleDateFormat("M");
-	SimpleDateFormat YearCur = new SimpleDateFormat("y");
-	String curMonth = MonthCur.format(new Date());
-	String curYear = YearCur.format(new Date());
-    Long leptadelay= Long.valueOf(0);
-    Long leptaover= Long.valueOf(0);
+    SimpleDateFormat YearCur = new SimpleDateFormat("y");
+    String curMonth = MonthCur.format(new Date());
+    String curYear = YearCur.format(new Date());
+    Long leptadelay = Long.valueOf(0);
+    Long leptaover = Long.valueOf(0);
     SimpleDateFormat clockDelay = new SimpleDateFormat("HH:mm");
     setContentView(R.layout.activity_panchcard);
-    TextView tv = (TextView)findViewById(R.id.textView1);
-	if (allrows.moveToFirst())
-	{
-		do
-		{
-			String checkdate[] = allrows.getString(1).toString().split("/");
-			Date startDayUpper,startDayLower,endDayLower,endDayUpper,loggedEnter,loggedExit;
-			SimpleDateFormat parserDate = new SimpleDateFormat("HH:mm");
-			startDayLower = parserDate.parse("09:00");
-			startDayUpper = parserDate.parse("10:00");
-			endDayLower = parserDate.parse("17:00");
-			endDayUpper = parserDate.parse("18:00");
-			String exitt;
-			if (allrows.getString(3)==null)
-				exitt="17:00";
-			else
-				exitt = allrows.getString(3).toString();
-			String enter = allrows.getString(2).toString();
-			loggedEnter= parserDate.parse(enter);
-			loggedExit= parserDate.parse(exitt);
+    TextView tv = (TextView) findViewById(R.id.textView1);
+    if (allrows.moveToFirst()) {
+        do {
+            String checkdate[] = allrows.getString(1).toString().split("/");
+            Date startDayUpper, startDayLower, endDayLower, endDayUpper, loggedEnter, loggedExit;
+            SimpleDateFormat parserDate = new SimpleDateFormat("HH:mm");
+            startDayLower = parserDate.parse("09:00");
+            startDayUpper = parserDate.parse("10:00");
+            endDayLower = parserDate.parse("17:00");
+            endDayUpper = parserDate.parse("18:00");
+            String exitt;
 
-			if (checkdate[0].equals(curYear))
-                if (checkdate[1].equals(curMonth))
-                {
-					if (loggedEnter.getTime()<startDayLower.getTime())
-                		loggedEnter=startDayLower;
-					if ((loggedEnter.getTime()>=startDayLower.getTime())&&(loggedEnter.getTime()<=startDayUpper.getTime()))
-					{
-						long workTimeMin = (loggedExit.getTime() - loggedEnter.getTime())/1000/60;
-						if(workTimeMin<(8*60))
-						{
-							leptadelay+=(8*60)-workTimeMin;
-						}
-						else if (workTimeMin>(8*60)+15)
-						{
-							leptaover+=workTimeMin-(8*60);
-						}
+            if (allrows.getString(3) == null)
+                exitt = "17:00";
+            else
+                exitt = allrows.getString(3).toString();
 
-					}
+            String enter = allrows.getString(2).toString();
+            loggedEnter = parserDate.parse(enter);
+            loggedExit = parserDate.parse(exitt);
+
+            if (checkdate[0].equals(curYear))
+                if (checkdate[1].equals(curMonth)) {
+                    //loggedEnter = startDayLower;
+                    long workTimeMin = (loggedExit.getTime() - loggedEnter.getTime()) / 1000 / 60;
+                    if (workTimeMin < (8 * 60)) {
+                        leptadelay += (8 * 60) - workTimeMin;
+                    } else if (workTimeMin > (8 * 60)) {
+                        leptaover += workTimeMin - (8 * 60);
+                    }
                 }
-                else if (loggedEnter.getTime()>startDayUpper.getTime())
-				{
-					long workTimeMin = (loggedExit.getTime() - loggedEnter.getTime())/1000/60;
-					leptadelay+=(loggedEnter.getTime()/1000/60) - (startDayUpper.getTime()/1000/60);
-					if(workTimeMin<(8*60))
-					{
-						leptadelay+=(8*60)-workTimeMin;
-					}
-					else if (workTimeMin >
-							(8*60)+15+(loggedEnter.getTime()/1000/60)
-									   - (startDayUpper.getTime()/1000/60))
-					{
-						leptaover+=workTimeMin-(8*60);
-					}
-				}
-		}
-		while(allrows.moveToNext());
-	}
+        }
+        while (allrows.moveToNext());
+    }
 
     timestamp = "Overtime : " + String.format("%02d:%02d", TimeUnit.MINUTES.toHours(leptaover),
             TimeUnit.MINUTES.toMinutes(leptaover)-
